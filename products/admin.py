@@ -13,6 +13,13 @@ class ProductAdmin(admin.ModelAdmin):
         model = Product
 admin.site.register(Product, ProductAdmin)
 
+class ProductCategoryAdmin(admin.ModelAdmin):
+    list_display = [filed.name for filed in ProductCategory._meta.fields]
+
+    class Meta:
+        model = ProductCategory
+admin.site.register(ProductCategory, ProductCategoryAdmin)
+
 class ProductImageAdmin(admin.ModelAdmin):
     list_display = [filed.name for filed in ProductImage._meta.fields]
 
