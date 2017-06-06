@@ -26,3 +26,10 @@ class ProductInOrderAdmin(admin.ModelAdmin):
     class Meta:
         model = ProductInOrder
 admin.site.register(ProductInOrder, ProductInOrderAdmin)
+
+class ProductInBasketAdmin(admin.ModelAdmin):
+    list_display = [filed.name for filed in ProductInBasket._meta.fields]
+
+    class Meta:
+        model = ProductInBasket
+admin.site.register(ProductInBasket, ProductInBasketAdmin)
